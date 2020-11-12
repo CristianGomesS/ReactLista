@@ -43,13 +43,13 @@ const PeopleList = props => {
 const style = StyleSheet.create(
     {
         container: {
-            backgroundColor: '#e2f977'
+            backgroundColor: '#6A5ACD'
         },
         headerStyle: {
             flex: 1,
             height: 50,
             width: '100%',
-            backgroundColor: "#e2a977",
+            backgroundColor: "#00CED1",
             justifyContent: "center",
             alignItems: 'center'
         },

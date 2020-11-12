@@ -6,15 +6,15 @@ const PeopleListItem = props => {
     const {people, onPressItemDetails} = props
     const {title, first, last} = people.name
     return(
-        <TouchableOpacity onPress={() => {
-            onPressItemDetails(people)
+       <TouchableOpacity onPress={() => {
+           onPressItemDetails(people)
         }} >
-            <View style={style.line}>
-                <Image style={style.avatar} source={{uri: people.picture.thumbnail}} />
+           <View style={style.line}>
+         <Image style={style.avatar} source={{uri: people.picture.thumbnail}} />
                 <Text style={style.lineText} key={first}>
                 {`${
                         toUpperFirst(title)
-                    } ${
+                  } ${
                         toUpperFirst(first)
                     } ${
                         toUpperFirst(last)
@@ -30,7 +30,7 @@ const style = StyleSheet.create({
         line: {
             height:60,
             borderBottomWidth: 1,
-            borderBottomColor: '#bbb',
+            borderBottomColor: '#fff',
             alignItems: 'center',
             flexDirection: 'row'
         },
@@ -48,16 +48,4 @@ const style = StyleSheet.create({
     }
 )
 export default PeopleListItem
-
-
-
-
-
-
-
-
-
-
-
-
 

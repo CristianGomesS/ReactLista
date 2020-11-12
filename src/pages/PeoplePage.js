@@ -13,11 +13,16 @@ export default class PeoplePage extends React.Component{
  
   componentDidMount(){
     axios
+    //.get('https://dog.ceo/api/breeds/list/all')
     .get('https://randomuser.me/api/?nat=br&results=20')
+    //.get('http://www.animaliarestapi.com/all')
+    //.get ('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30') 
     .then(response => {
-      const {results} = response.data
+      const {results } = response.data  
+ 
       this.setState({
-        peoples: results
+        peoples : results
+        
       })
     })
   }
