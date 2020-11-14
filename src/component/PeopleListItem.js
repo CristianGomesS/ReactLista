@@ -1,18 +1,20 @@
 import React from 'react'
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native'
+import {View, Image, Text, TouchableOpacity} from 'react-native'
 import {toUpperFirst} from '../util'
+import PListStyle from '../styles/PListStyle'
 
 const PeopleListItem = props => {
     const {people, onPressItemDetails} = props
     const nome = people.nome //dentro de people vai ter o tituli primeiro e ultimo nome da pessoa
     const sobrenome = people.sobrenome 
+    const idade = people.idade
     return(
        <TouchableOpacity onPress={() => {
            onPressItemDetails(people)
         }} >
-           <View style={style.line}>
-             <Image style={style.avatar} source={{uri: people.image}} />
-                <Text style={style.lineText} key={nome}>
+           <View style={PListStyle.line}>
+             <Image style={PListStyle.avatar} source={{uri: people.image}} />
+                <Text style={PListStyle.lineText} key={nome}>
                 {`${
                         toUpperFirst(nome)
                   } ${
@@ -26,28 +28,6 @@ const PeopleListItem = props => {
 
 }
 
-const style = StyleSheet.create({
-        line: {
-            height:50,
-            borderBottomWidth: 1,
-            borderBottomColor: '#000000',
-            borderRadius:50,
-            alignItems: 'center',
-            flexDirection: 'row',
-            
-        },
-        avatar: {
-            aspectRatio: 1,
-            marginLeft: 10,
-            flex: 1,
-            borderRadius: 50
-        },
-        lineText: {
-            fontSize: 20,
-            paddingLeft: 20,
-            flex: 7
-        }
-    }
-)
+
 export default PeopleListItem
 

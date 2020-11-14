@@ -1,6 +1,6 @@
 import React from 'react'
-import {View, Text,StyleSheet, Image} from 'react-native'
-
+import {View, Text, Image} from 'react-native'
+import PDetalhesStyle from '../styles/PDetalhesStyle'
 export default class PeopleDetailsPage extends React.Component{
 
     constructor(props){
@@ -13,48 +13,22 @@ export default class PeopleDetailsPage extends React.Component{
     render(){
         //const imagem = this.state.people
         return(
-            <View style={style.ViewStyle}>
+            <View style={PDetalhesStyle.ViewStyle}>
                 <Image style={{height:300,width:300}} source={{uri:this.state.people.image}} />
-                <Text style={style.Texto}>Nome: {this.state.people.nome}</Text>
-                <Text  style={style.Texto}>Sobrenome: {this.state.people.sobrenome}</Text>
-                <Text  style={style.Texto}>Email: {this.state.people.email}</Text>
-                <Text  style={style.Texto}>Telefone: {this.state.people.telefone}</Text>
-                <Text  style={style.Texto}>CPF: {this.state.people.cpf}</Text>
-                <Text  style={style.Texto}>RG: {this.state.people.rg}</Text>
-                <Text  style={style.Texto}>Data de Nascimento:  {this.state.people.dataNascimento}</Text>
-                <Text  style={style.Texto}>Idade: {this.state.people.idade}</Text>
+                <Text style={PDetalhesStyle.Nome}>Nome: {this.state.people.nome} {this.state.people.sobrenome} </Text>
+                <Text  style={PDetalhesStyle.Texto}>Idade: {this.state.people.idade}</Text>
+                <Text  style={PDetalhesStyle.Texto}>Data de Nascimento:  {this.state.people.dataNascimento}</Text>
+                <Text  style={PDetalhesStyle.Texto}>Email: {this.state.people.email}</Text>
+                <Text  style={PDetalhesStyle.Texto}>Telefone: {this.state.people.telefone}</Text>
+                <Text  style={PDetalhesStyle.Texto}>CPF: {this.state.people.cpf}</Text>
+                <Text  style={PDetalhesStyle.Texto}>RG: {this.state.people.rg}</Text>
+             
 
             </View>
         )
     }
 }
-const style = StyleSheet.create({
-    line: {
-        height:60,
-        borderBottomWidth: 1,
-        borderBottomColor: '#fff',
-        alignItems: 'center',
-        flexDirection: 'row'
-    },
-    avatar: {
-        aspectRatio: 1,
-        marginLeft: 10,
-        flex: 1,
-        borderRadius: 50
-    },
-    Texto: {
-        fontSize: 14,
-        
-        
-    },
-    ViewStyle:{
-        backgroundColor:'#C0C0C0',
-        alignItems : 'center',
-        borderBottomLeftRadius : 50,
-        borderBottomRightRadius : 50,
-        borderBottomColor: '#000000',
-      
-    },
-}
-)
+
+
+
 
