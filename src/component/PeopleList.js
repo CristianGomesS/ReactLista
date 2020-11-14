@@ -8,7 +8,7 @@ const PeopleList = props => {
     const renderItem = ({item}) => {
         return (
             <PeopleListItem 
-                key={item.name.first} 
+                key={item.nome} 
                 people={item}
                 onPressItemDetails={onPressItem}
             />
@@ -31,7 +31,7 @@ const PeopleList = props => {
                 <FlatList
                     data={peoples}
                     renderItem={renderItem}
-                    keyExtractor={(item) => {item.name.first}}
+                    keyExtractor={(item) => {item.nome}}
                     ListHeaderComponent={header}
                     stickyHeaderIndices={[0]}
                 />
@@ -43,7 +43,8 @@ const PeopleList = props => {
 const style = StyleSheet.create(
     {
         container: {
-            backgroundColor: '#6A5ACD'
+            backgroundColor: '#6A5ACD',
+            
         },
         headerStyle: {
             flex: 1,

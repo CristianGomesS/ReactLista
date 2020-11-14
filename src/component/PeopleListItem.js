@@ -4,21 +4,21 @@ import {toUpperFirst} from '../util'
 
 const PeopleListItem = props => {
     const {people, onPressItemDetails} = props
-    const {title, first, last} = people.name
+    const nome = people.nome //dentro de people vai ter o tituli primeiro e ultimo nome da pessoa
+    const sobrenome = people.sobrenome 
     return(
        <TouchableOpacity onPress={() => {
            onPressItemDetails(people)
         }} >
            <View style={style.line}>
-         <Image style={style.avatar} source={{uri: people.picture.thumbnail}} />
-                <Text style={style.lineText} key={first}>
+             <Image style={style.avatar} source={{uri: people.image}} />
+                <Text style={style.lineText} key={nome}>
                 {`${
-                        toUpperFirst(title)
+                        toUpperFirst(nome)
                   } ${
-                        toUpperFirst(first)
-                    } ${
-                        toUpperFirst(last)
-                    }`}
+                        toUpperFirst(sobrenome)
+                  }`
+                }
                 </Text>
             </View>
         </TouchableOpacity>
@@ -28,11 +28,13 @@ const PeopleListItem = props => {
 
 const style = StyleSheet.create({
         line: {
-            height:60,
+            height:50,
             borderBottomWidth: 1,
-            borderBottomColor: '#fff',
+            borderBottomColor: '#000000',
+            borderRadius:50,
             alignItems: 'center',
-            flexDirection: 'row'
+            flexDirection: 'row',
+            
         },
         avatar: {
             aspectRatio: 1,
